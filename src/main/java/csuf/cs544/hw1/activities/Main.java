@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Main extends Activity {
@@ -42,7 +43,8 @@ public class Main extends Activity {
 								
 				try {
 					// get the text from the field
-					String input = "10 9 8 7 6 5 4 3 2 1";
+					EditText inputView = (EditText) findViewById(R.id.editText1);
+					String input = inputView.getText().toString();
 					int[] nums = formatter.format(input);
 					validator.validate(nums);
 					Intent i = new Intent(Main.this,Result.class);
