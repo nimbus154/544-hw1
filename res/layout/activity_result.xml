@@ -9,6 +9,7 @@
     tools:context=".Result" >
 
     <TextView
+        android:id="@+id/result_list_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
