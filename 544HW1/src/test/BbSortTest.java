@@ -42,7 +42,87 @@ public class BbSortTest {
 		;
 		
 	}
+	@Test
+	public void testDisplayInputArray(){
+		int[] num = {};
+		b.bubbleSort(num, aDisplayer);	
+		Mockito.verify(aDisplayer).print(num, "Input Array");
+	}
 	
+	@Test
+	public void testDisplaySortedArray(){
+		int[] num = {};
+		b.bubbleSort(num, aDisplayer);	
+		Mockito.verify(aDisplayer).print(num, "All Done");
+	}
+	
+	@Test
+	public void testDisplayEachIteration(){
+		int[] num = {1,2,6};
+		b.bubbleSort(num, aDisplayer);	
+		Mockito.verify(aDisplayer).print(num, "Iteration 1 Done");
+		Mockito.verify(aDisplayer).print(num, "Iteration 2 Done");
+		
+	}
+	
+	@Test
+	public void testDisplaySwapped(){
+		int[] num = {3,2};
+		b.bubbleSort(num, aDisplayer);	
+		Mockito.verify(aDisplayer).print(num, "3>2 Swapped");
+	}
+	
+	@Test
+	public void testDisplayNotSwapped(){
+		int[] num = {2,3};
+		b.bubbleSort(num, aDisplayer);	
+		Mockito.verify(aDisplayer).print(num, "2<3 OK");
+	}
+	
+	@Test
+	public void testDisplayEmpty(){
+		int[] num = {};
+		b.bubbleSort(num, aDisplayer);	
+		Mockito.verify(aDisplayer).print(num, "Input Array");
+		Mockito.verify(aDisplayer).print(num, "All Done");
+		Mockito.verify(aDisplayer, Mockito.never()).print(num, "Iteration 1 Done");
+		
+	}
+	
+	@Test
+	public void testDisplayOneInput(){
+		int[] num = {1};
+		b.bubbleSort(num, aDisplayer);	
+		Mockito.verify(aDisplayer).print(num, "Input Array");
+		Mockito.verify(aDisplayer).print(num, "All Done");
+		Mockito.verify(aDisplayer, Mockito.never()).print(num, "Iteration 1 Done");
+		
+	}
+	
+	
+	@Test
+	public void testDisplaySoretd(){
+		int[] num = {1,2};
+		b.bubbleSort(num, aDisplayer);	
+		Mockito.verify(aDisplayer).print(num, "Input Array");
+		Mockito.verify(aDisplayer).print(num, "All Done");
+		Mockito.verify(aDisplayer).print(num, "Iteration 1 Done");
+		Mockito.verify(aDisplayer).print(num, "1<2 OK");
+		Mockito.verify(aDisplayer , Mockito.never()).print(Mockito.eq(num) ,Mockito.endsWith("Swapped"));
+		
+	}
+	
+	@Test
+	public void testDisplayUnSoretd(){
+		int[] num = {2,1};
+		b.bubbleSort(num, aDisplayer);	
+		Mockito.verify(aDisplayer).print(num, "Input Array");
+		Mockito.verify(aDisplayer).print(num, "All Done");
+		Mockito.verify(aDisplayer).print(num, "Iteration 1 Done");
+		Mockito.verify(aDisplayer).print(num, "2>1 Swapped");
+		Mockito.verify(aDisplayer , Mockito.never()).print(Mockito.eq(num) ,Mockito.endsWith("OK"));
+		
+	}
 	
 
 }
