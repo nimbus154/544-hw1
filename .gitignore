@@ -6,3 +6,9 @@
 *.ear
 target/*
 /target
+
+.classpath
+.project
+
+gen/*
+bin/*
