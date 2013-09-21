@@ -1,4 +1,5 @@
-package csuf.cs544.hw1.controller;
+package csuf.cs544.hw1.display;
+
 
 public class SortArrayDisplayer implements ArrayDisplayer {
 

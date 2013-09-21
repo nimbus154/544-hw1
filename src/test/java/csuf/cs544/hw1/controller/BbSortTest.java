@@ -8,8 +8,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import csuf.cs544.hw1.controller.ArrayDisplayer;
 import csuf.cs544.hw1.controller.BbSort;
+import csuf.cs544.hw1.display.ArrayDisplayer;
 
 public class BbSortTest {
 

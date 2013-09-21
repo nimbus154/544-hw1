@@ -1,5 +1,7 @@
 package csuf.cs544.hw1.controller;
 
+import csuf.cs544.hw1.display.ArrayDisplayer;
+
 /**
  * Handles logic for the sorting feature of the application
  *

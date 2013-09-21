@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class Main extends Activity {
@@ -27,8 +28,8 @@ public class Main extends Activity {
         b.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View v) {
-				
-				Intent i =new Intent(Main.this,Result.class);
+
+				Intent i = new Intent(Main.this,Result.class);
 				startActivity(i);
 			}
 		});
