@@ -9,27 +9,24 @@ public class Validator {
 	
 	public static String OUT_OF_RANGE_ERROR = "Please enter only numbers between 1 and 100",
 						 UNIQUNESS_ERROR = "All numbers must be unique",
-						 INPUT_SIZE_ERROR = "Please enter 10 to 12 numbers";
+						 INPUT_SIZE_ERROR = "Please enter 10 to 12 numbers";	
 	
-	
-	public void validate (int[] arrayofNums) throws Exception {
+	public void validate(int[] arrayOfNums) throws Exception {
 		
-		if (arrayofNums.length< 10 || arrayofNums.length >12  ) {
+		if (arrayOfNums.length < 10 || arrayOfNums.length > 12) {
 			throw new Exception(INPUT_SIZE_ERROR) ;
 		}
 		
 		Set<Integer> uniqueNums = new HashSet<Integer>();
 		
-		for(int a:arrayofNums) {
-		
+		for(int a:arrayOfNums) {
 			if (a<1 || a>100) {
 				throw new Exception(OUT_OF_RANGE_ERROR);				
 			}
-			
 			uniqueNums.add(a);
 		}
 	
-		if (uniqueNums.size() != arrayofNums.length) {
+		if (uniqueNums.size() != arrayOfNums.length) {
 			throw new Exception(UNIQUNESS_ERROR);
 		}
 	}

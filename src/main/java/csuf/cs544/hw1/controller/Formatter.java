@@ -9,7 +9,7 @@ public class Formatter {
 	
 	/**
 	 * Transmit space-separated string into array of numbers
-	 * @param input user inputted string
+	 * @param input user inputed string
 	 * @return array of numbers
 	 * @throws Exception if string cannot be transformed into an array of numbers
 	 */

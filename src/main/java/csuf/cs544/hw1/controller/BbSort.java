@@ -4,28 +4,28 @@ public class BbSort {
 	
 	public BbSort() {}
 		
-	public int[] bubbleSort(int[] num , ArrayDisplayer arrayDisplayer) {
+	public int[] bubbleSort(int[] nums, ArrayDisplayer arrayDisplayer) {
 		
-		arrayDisplayer.display(num, "Input Array");
+		arrayDisplayer.display(nums, "Input Array");
 		
-		 for (int i = 1; i < num.length; i++) {			 
-		    for (int j = 0; j < num.length - i; j++) {
+		 for (int i = 1; i < nums.length; i++) {			 
+		    for (int j = 0; j < nums.length - i; j++) {
 		    	
-		        if (num[j ] > num[j+1]) {
-		        	arrayDisplayer.display (num, num[j] + ">" + num[j+1] + " Swapped");
+		        if (nums[j] > nums[j+1]) {
+		        	arrayDisplayer.display (nums, nums[j] + ">" + nums[j+1] + " Swapped");
 		        	
-		            int temp = num[j ];
-		            num[j ] = num[j+1];
-		            num[j+1] = temp;		            
+		            int temp = nums[j];
+		            nums[j] = nums[j+1];
+		            nums[j+1] = temp;		            
 		        }		        
 		        else {		        
-		        	arrayDisplayer.display (num, num[j] + "<" + num[j+1] + " OK");
+		        	arrayDisplayer.display (nums, nums[j] + "<" + nums[j+1] + " OK");
 		        }
 		    }
-		    arrayDisplayer.display(num, "Iteration " + i +" Done");
+		    arrayDisplayer.display(nums, "Iteration " + i + " Done");
 		 }
 		 
-		 arrayDisplayer.display(num, "All Done" );
-		 return num;
+		 arrayDisplayer.display(nums, "All Done" );
+		 return nums;
 	}
 }
