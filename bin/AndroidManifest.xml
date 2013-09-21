@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity 
-            android:name="csuf.cs544.hw1.activites.Main" 
+            android:name="csuf.cs544.hw1.activities.Main" 
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="csuf.cs544.hw1.activites.Result"
+            android:name="csuf.cs544.hw1.activities.Result"
             android:label="@string/title_activity_result" >
         </activity>
     </application>

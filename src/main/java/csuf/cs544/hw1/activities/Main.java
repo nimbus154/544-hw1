@@ -1,4 +1,4 @@
-package csuf.cs544.hw1.activites;
+package csuf.cs544.hw1.activities;
 
 import csuf.cs544.R;
 import csuf.cs544.R.id;
