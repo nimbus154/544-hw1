@@ -7,5 +7,6 @@
     <string name="Enter">Enter 10-12 space-separated unique integers between 1 and 100:</string>
     <string name="sort">Sort the Integers</string>
     <string name="title_activity_result">Result</string>
+    <string name="error_dialog_title">Error!</string>
 
 </resources>
