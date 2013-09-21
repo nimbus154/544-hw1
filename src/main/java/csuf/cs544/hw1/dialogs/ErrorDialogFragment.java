@@ -4,7 +4,6 @@ import android.R;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
-import android.content.DialogInterface;
 import android.os.Bundle;
 
 public class ErrorDialogFragment extends DialogFragment {
@@ -14,15 +13,9 @@ public class ErrorDialogFragment extends DialogFragment {
     	String message = getArguments().getString("error");
         return new AlertDialog.Builder(getActivity())
                 //.setIcon(R.drawable.alert_dialog_icon)
-                .setTitle("Error")
+                .setTitle("e")
                 .setMessage(message)
-                .setPositiveButton("Okay",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int whichButton) {
-                        	 
-                        }
-                    }
-                ).create();
+                .setPositiveButton("Okay", null).create();
     }
 }
 
