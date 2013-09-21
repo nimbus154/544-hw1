@@ -6,6 +6,7 @@ import csuf.cs544.R.layout;
 import csuf.cs544.R.menu;
 import csuf.cs544.hw1.controller.Formatter;
 import csuf.cs544.hw1.controller.Validator;
+import csuf.cs544.hw1.dialogs.ErrorDialogFragment;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -42,18 +43,25 @@ public class Main extends Activity {
 			public void onClick(View v) {
 								
 				try {
-					// get the text from the field
 					EditText inputView = (EditText) findViewById(R.id.editText1);
 					String input = inputView.getText().toString();
+					
+					// check text for errors
 					int[] nums = formatter.format(input);
 					validator.validate(nums);
-					Intent i = new Intent(Main.this,Result.class);
 					
+					// pass array to new activity
+					Intent i = new Intent(Main.this,Result.class);					
 					i.putExtra(INT_ARRAY, nums);					
 					startActivity(i);
 				}
 				catch(Exception e) {
-					
+					// display a dialog box					
+					Bundle args = new Bundle();
+					args.putString("error", e.getMessage());
+					ErrorDialogFragment dialog = new ErrorDialogFragment();
+					dialog.setArguments(args);
+					dialog.show(getFragmentManager(), "validation_error");
 				}				
 			}
 		});
