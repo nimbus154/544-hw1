@@ -8,6 +8,7 @@ import csuf.cs544.hw1.display.ArrayDisplayer;
 import csuf.cs544.hw1.display.TextViewArrayDisplayer;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.widget.TextView;
 
@@ -25,7 +26,9 @@ public class Result extends Activity {
 		displayer = new TextViewArrayDisplayer(resultListTextView);
 		sorter = new BbSort();
 		
-		sorter.bubbleSort(new int[]{8, 7, 5, 3, 2, 1}, displayer);		
+		int[] nums = getIntent().getIntArrayExtra(Main.INT_ARRAY);
+		
+		sorter.bubbleSort(nums, displayer);		
 	}
 
 	@Override
