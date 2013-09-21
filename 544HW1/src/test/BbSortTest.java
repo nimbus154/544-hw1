@@ -8,18 +8,22 @@ import junit.framework.Assert;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 
+import cs544.hw1.controller.ArrayDisplayer;
 import cs544.hw1.controller.BbSort;
 
 public class BbSortTest {
 
 	
-	
+	private ArrayDisplayer aDisplayer;
 	BbSort b;
 	@Before
 	public void setUp() throws Exception {
 		
 		b = new BbSort();
+		aDisplayer = Mockito.mock(ArrayDisplayer.class);
 	}
 	
 	@Test
@@ -29,7 +33,7 @@ public class BbSortTest {
 	public void sortTest() {
 		
 		int[] num = {9,8,7,6,5,4,3,2,1,11,33,44};
-		int[] actual = b.bubbleSort(num);
+		int[] actual = b.bubbleSort(num , aDisplayer);
 		int[] expected = {1,2,3,4,5,6,7,8,9,11,33,44};
 		//Assert.assertTrue(Arrays.equals(actual, expected));
 		//Assert.assertEquals(expected, actual);

@@ -5,7 +5,7 @@ public class BbSort {
 	public BbSort() {}
 	
 	
-	public int[] bubbleSort(int[] num) {
+	public int[] bubbleSort(int[] num , ArrayDisplayer arrayDisplayer) {
 		
 		 for (int i = 1; i < num.length; i++) {
 		    for (int j = 0; j < num.length - i; j++) {
