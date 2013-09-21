@@ -1,12 +1,10 @@
-package test;
-
-import static org.junit.Assert.*;
+package csuf.cs544.hw1.controller;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import cs544.hw1.controller.Formatter;
+import csuf.cs544.hw1.controller.Formatter;
 
 public class FormatterTest {
 

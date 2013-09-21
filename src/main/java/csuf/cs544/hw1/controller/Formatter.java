@@ -1,4 +1,4 @@
-package cs544.hw1.controller;
+package csuf.cs544.hw1.controller;
 
 public class Formatter {
 	
@@ -15,7 +15,7 @@ public class Formatter {
 	 */
 	public int[] format(String input) throws Exception {
 
-		if (input.trim().isEmpty()) {
+		if (input.trim().length() == 0) {
 			throw new Exception(EMPTY_STRING_ERROR);
 		}
 		

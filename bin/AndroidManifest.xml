@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bubblesortalgorithm"
+    package="csuf.cs544"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0-SNAPSHOT" >
 
     <uses-sdk
-        android:minSdkVersion="10"
-        android:targetSdkVersion="17" />
+        android:minSdkVersion="8"
+        android:targetSdkVersion="16" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        <activity
-            android:name="com.bubblesortalgorithm.Main"
+        android:theme="@style/AppTheme">
+        <activity 
+            android:name="csuf.cs544.hw1.activites.Main" 
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,9 +23,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.bubblesortalgorithm.Result"
+            android:name="csuf.cs544.hw1.activites.Result"
             android:label="@string/title_activity_result" >
         </activity>
     </application>
-
+    
 </manifest>

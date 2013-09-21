@@ -1,5 +1,8 @@
-package com.bubblesortalgorithm;
+package csuf.cs544.hw1.activites;
 
+import csuf.cs544.R;
+import csuf.cs544.R.layout;
+import csuf.cs544.R.menu;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;

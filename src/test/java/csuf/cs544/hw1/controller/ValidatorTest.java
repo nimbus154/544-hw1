@@ -1,12 +1,10 @@
-package test;
-
-import static org.junit.Assert.*;
+package csuf.cs544.hw1.controller;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import cs544.hw1.controller.Validator;
+import csuf.cs544.hw1.controller.Validator;
 
 public class ValidatorTest {
 
@@ -82,7 +80,7 @@ public class ValidatorTest {
 	  
 	  catch (Exception e) {
 		  
-		  Assert.assertEquals(Validator.SIZE_TEST,e.getMessage());  
+		  Assert.assertEquals(Validator.INPUT_SIZE_ERROR,e.getMessage());  
 			  
 	  }
 	 }
@@ -100,7 +98,7 @@ public class ValidatorTest {
 	  
 	  catch (Exception e) {
 		  
-		  Assert.assertEquals(Validator.SIZE_TEST,e.getMessage());  
+		  Assert.assertEquals(Validator.INPUT_SIZE_ERROR,e.getMessage());  
 			  
 	  }
 	 }
