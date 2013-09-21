@@ -8,6 +8,12 @@ public class SortController {
 	
 	public SortController() { }
 	
+	private Validator validator;
+	
+	private BbSort sorter;
+	
+	private Formatter formatter;
+	
 	/**
 	 * Controls the sorting process
 	 * @param input raw string input from user
@@ -25,4 +31,27 @@ public class SortController {
 		return null;
 	}
 
+	public void setValidator(Validator validator) {
+		this.validator = validator;
+	}
+	
+	public Validator getValidator() {
+		return this.validator;
+	}
+
+	public void setBbSort(BbSort sorter) {
+		this.sorter = sorter;
+	}
+	
+	public BbSort getSorter() {
+		return this.sorter;
+	}
+
+	public void setFormatter(Formatter formatter) {
+		this.formatter = formatter;
+	}
+	
+	public Formatter getFormatter() {
+		return this.formatter;
+	}
 }
