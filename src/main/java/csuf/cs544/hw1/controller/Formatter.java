@@ -3,7 +3,7 @@ package csuf.cs544.hw1.controller;
 public class Formatter {
 	
 	public static String EMPTY_STRING_ERROR = "Input cannot be empty",
-						 PARSE_ERROR = "Please enter space-separated numers only";						 
+						 PARSE_ERROR = "Please enter space-separated numbers only";						 
 	
 	public Formatter() {}
 	
