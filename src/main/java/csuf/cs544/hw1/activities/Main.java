@@ -44,19 +44,15 @@ public class Main extends Activity {
 						dialog.show(getFragmentManager(), "test");						
 					}
 					else {
-						// check text for errors
 						int[] nums = formatter.format(input);
 						validator.validate(nums);
 						
-						// pass array to new activity
 						Intent i = new Intent(Main.this,Result.class);					
 						i.putExtra(INT_ARRAY, nums);					
 						startActivity(i);
-
 					}
 				}
-				catch(Exception e) {
-					// display a dialog box					
+				catch(Exception e) {					
 					Bundle args = new Bundle();
 					args.putString("error", e.getMessage());
 					ErrorDialogFragment dialog = new ErrorDialogFragment();
