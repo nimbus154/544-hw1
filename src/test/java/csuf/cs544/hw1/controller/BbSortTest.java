@@ -31,7 +31,7 @@ public class BbSortTest {
 		int[] num = {9,8,7,6,5,4,3,2,1,11,33,44};
 		int[] actual = b.bubbleSort(num , aDisplayer);
 		int[] expected = {1,2,3,4,5,6,7,8,9,11,33,44};
-		Assert.assertEquals(Arrays.toString(expected),Arrays.toString (actual));//		
+		Assert.assertEquals(Arrays.toString(expected),Arrays.toString (actual));		
 	}
 	
 	@Test
