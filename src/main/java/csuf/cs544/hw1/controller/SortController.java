@@ -6,7 +6,12 @@ package csuf.cs544.hw1.controller;
  */
 public class SortController {
 	
-	public SortController() { }
+	public SortController() { 
+		
+		validator = new Validator();
+		sorter = new BbSort();
+		formatter = new Formatter();
+	}
 	
 	private Validator validator;
 	
@@ -26,9 +31,10 @@ public class SortController {
 	public int[] sort(String input, ArrayDisplayer displayer) 
 		throws Exception {
 		
-		
+		int[] nums = formatter.format(input);
+		validator.validate(nums); // throws an exception if invalid
 	
-		return null;
+		return sorter.bubbleSort(nums, displayer);
 	}
 
 	public void setValidator(Validator validator) {
