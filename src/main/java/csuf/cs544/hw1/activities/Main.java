@@ -46,6 +46,10 @@ public class Main extends Activity {
 					EditText inputView = (EditText) findViewById(R.id.editText1);
 					String input = inputView.getText().toString();
 					
+					if(input.equals("0")) {
+						finish();
+						System.exit(1);
+					}
 					// check text for errors
 					int[] nums = formatter.format(input);
 					validator.validate(nums);
