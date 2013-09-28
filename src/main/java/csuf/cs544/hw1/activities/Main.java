@@ -18,20 +18,39 @@ public class Main extends Activity {
 	
 	public static final String INT_ARRAY = "nums";
 	
-	private Button b;
+	private Button sortButton;
+	private Button exitButton;
 	private Validator validator;
 	private Formatter formatter;
+	
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        b = (Button) findViewById(R.id.button1);
+        setUpSortButton();
+        setUpExitButton();
+    }
+   
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+	
+	/**
+	 * Configures the sort button
+	 */
+	private void setUpSortButton() {
+		
+		sortButton = (Button) findViewById(R.id.button1);
         
         validator = new Validator();
         formatter = new Formatter();
         
-        b.setOnClickListener(new OnClickListener() {
+        sortButton.setOnClickListener(new OnClickListener() {
         	
 			public void onClick(View v) {
 								
@@ -39,18 +58,12 @@ public class Main extends Activity {
 					EditText inputView = (EditText) findViewById(R.id.editText1);
 					String input = inputView.getText().toString();
 					
-					if(input.equals("0")) {
-						CloseApplicationDialogFragment dialog = new CloseApplicationDialogFragment();
-						dialog.show(getFragmentManager(), "test");						
-					}
-					else {
-						int[] nums = formatter.format(input);
-						validator.validate(nums);
+					int[] nums = formatter.format(input);
+					validator.validate(nums);
 						
-						Intent i = new Intent(Main.this,Result.class);					
-						i.putExtra(INT_ARRAY, nums);					
-						startActivity(i);
-					}
+					Intent i = new Intent(Main.this,Result.class);					
+					i.putExtra(INT_ARRAY, nums);					
+					startActivity(i);
 				}
 				catch(Exception e) {					
 					Bundle args = new Bundle();
@@ -60,13 +73,22 @@ public class Main extends Activity {
 					dialog.show(getFragmentManager(), "validation_error");
 				}				
 			}
-		});
-    }
-   
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
+		});	
+	}
+	
+	/**
+	 * Configures the exit button
+	 */
+	private void setUpExitButton() {
+		
+		exitButton = (Button) findViewById(R.id.exit_button);
+		exitButton.setOnClickListener(new OnClickListener() {
+        	
+			public void onClick(View v) {
+								
+				CloseApplicationDialogFragment dialog = new CloseApplicationDialogFragment();
+				dialog.show(getFragmentManager(), "test");													
+			}
+		});	
+	}
 }

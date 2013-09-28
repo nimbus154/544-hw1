@@ -13,9 +13,10 @@ public class ErrorDialogFragment extends DialogFragment {
     	String message = getArguments().getString("error");
         return new AlertDialog.Builder(getActivity())
                 //.setIcon(R.drawable.alert_dialog_icon)
-                .setTitle("e")
+                .setTitle(R.string.dialog_alert_title)
                 .setMessage(message)
-                .setPositiveButton("Okay", null).create();
+                .setPositiveButton("Okay", null)
+                .create();
     }
 }
 
