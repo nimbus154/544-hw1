@@ -15,7 +15,6 @@ public class CloseApplicationDialogFragment extends DialogFragment {
     	
         return new AlertDialog.Builder(getActivity())
                 //.setIcon(R.drawable.alert_dialog_icon)
-                .setTitle("Error!")// todo string resource R.string.error_dialog_title)
                 .setMessage("Are you sure you want to exit?")
                 .setPositiveButton("Okay",  new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
@@ -26,7 +25,6 @@ public class CloseApplicationDialogFragment extends DialogFragment {
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     	EditText inputView = (EditText) getActivity().findViewById(R.id.editText1);
-                    	inputView.setText(null);
                     }
                 })
                 .create();
