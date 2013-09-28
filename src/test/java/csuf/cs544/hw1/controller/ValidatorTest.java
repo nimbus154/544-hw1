@@ -32,7 +32,7 @@ public class ValidatorTest {
   @Test
   public void testInvalidRange() throws Exception{
 	  
-	  int [] a =  {0,9,8,7,6,101,400,-1,6,4,65,34};
+	  int [] a =  {Validator.MIN_RANGE - 1,9,8,7,6, Validator.MAX_RANGE + 1,6,4,65,34};
 	  try{
 		  v.validate(a);
 		  Assert.fail(" Should fail because of the out side of the range");
@@ -65,7 +65,8 @@ public class ValidatorTest {
 	  int[] a = {1};	  
 	  try {
 		  v.validate(a);
-		  Assert.fail("Please enter 10 to 12 numbers");  
+		  Assert.fail("Should fail for arrays with fewer than " + Validator.MIN_SIZE 
+				  + " elements");  
 	  }
 	  catch (Exception e) {
 		  Assert.assertEquals(Validator.INPUT_SIZE_ERROR,e.getMessage());  
@@ -79,7 +80,8 @@ public class ValidatorTest {
 	  
 	  try {
 		  v.validate(a);
-		  Assert.fail("Please enter 10 to 12 numbers");  
+		  Assert.fail("Should fail for arrays with more than " + Validator.MAX_SIZE 
+				  + " elements");  
 	  }
 	  catch (Exception e) {
 		  Assert.assertEquals(Validator.INPUT_SIZE_ERROR,e.getMessage());  			 
